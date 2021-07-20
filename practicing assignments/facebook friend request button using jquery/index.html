@@ -15,14 +15,14 @@
     <div class="button">
         <button>
             <i class="fas fa-user-plus"></i>
-            <span>Add Friend</span>
+            Add Friend
         </button>
     </div>
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script>
-        $('.button button').click(function () {
-            $('.button button').html('<i class="fas fa-user-times"></i> <span>Cancel Request<span>').css('width', '201px');
+        $(".button button").click(function () {
+            $(".button button").html($(".button button").html() == '<i class="fas fa-user-times"></i> Cancel Request' ? '<i class="fas fa-user-plus"></i> Add Friend' : '<i class="fas fa-user-times"></i> Cancel Request');
         });
     </script>
 </body>

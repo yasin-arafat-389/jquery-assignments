@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Form validation</title>
+</head>
+
+<body>
+
+    <div class="form">
+        <h1>Sign up</h2>
+            <div class="inputs">
+                <input id="name" type="text" placeholder="Your full name">
+                <p class="name"></p>
+                <input id="email" type="email" placeholder="Your gmail address">
+                <p class="email"></p>
+                <input id="number" type="number" placeholder="Your age">
+                <p class="number"></p>
+                <input id="password" type="password" placeholder="Set a password">
+                <p class="password"></p>
+            </div>
+            <div class="btn">
+                <button class="su">Sign up</button>
+            </div>
+            <div class="confirmation"></div>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $('.su').click(function () {
+
+            let name = $('#name').val();
+            let email = $('#email').val();
+            let number = $('#number').val();
+            let password = $('#password').val();
+
+            if (name == '') {
+                $('p.name').html('*This field is required');
+                $('#name').css('border-color', 'red');
+            } else {
+                $('p.name').html('');
+                $('#name').css('border-color', 'rgb(221, 223, 226)');
+            }
+
+            if (email == '') {
+                $('p.email').html('*This field is required');
+                $('#email').css('border-color', 'red');
+            } else {
+                $('p.email').html('');
+                $('#email').css('border-color', 'rgb(221, 223, 226)');
+            }
+
+            if (number == '') {
+                $('p.number').html('*This field is required');
+                $('#number').css('border-color', 'red');
+            } else {
+                $('p.number').html('');
+                $('#number').css('border-color', 'rgb(221, 223, 226)');
+            }
+
+            if (password == '') {
+                $('p.password').html('*This field is required');
+                $('#password').css('border-color', 'red');
+            } else {
+                $('p.password').html('');
+                $('#password').css('border-color', 'rgb(221, 223, 226)');
+            }
+
+            if (name == '' || email == '' || number == '' || password == '') {
+                $('.confirmation').html('');
+            } else {
+                $('.confirmation').html('<i class="fas fa-check"></i> Data Saved');
+            }
+
+            let confirmation = setInterval(function () {
+                $('.confirmation').empty();
+                clearInterval(confirmation);
+            }, 3000);
+        })
+
+    </script>
+</body>
+
+</html>

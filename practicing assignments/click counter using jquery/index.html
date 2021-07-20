@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Click counter</title>
+</head>
+
+<body>
+    <div class="product">
+        <img src="assets/img/ac.jpg" alt="">
+        <h2>Add this to cart</h2>
+        <h3>Quantity</h3>
+        <div class="buttons">
+            <button id="add">+</button>
+            <button id="subtract">-</button>
+        </div>
+        <div class="box"></div>
+
+
+
+
+        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <script>
+
+            let count = 1;
+            $('#add').click(function () {
+                $('.box').text(count);
+                count = count + 1;
+            })
+
+            $('#subtract').click(function () {
+                $('.box').text(count);
+                count = count - 1;
+
+                if (count <= 0) {
+                    count = 0;
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

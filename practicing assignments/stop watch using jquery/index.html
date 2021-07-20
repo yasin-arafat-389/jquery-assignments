@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Stop watch</title>
+</head>
+
+<body>
+    <div class="stop-watch">
+        <h1>Stop watch</h1>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <div class="display">
+                <h1></h1>
+                <div class="text"></div>
+                <div class="text2"></div>
+                <div class="text3"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        let count = 1;
+        let stop_watch_start = '0';
+        $('#start').click(function () {
+
+            stop_watch_start = setInterval(function () {
+                $('.display h1').text(count);
+
+                if (count >= 20 && count <= 30) {
+                    $('.text').html('you are doing great');
+                } else if (count >= 31 && count <= 40) {
+                    $('.text').addClass('text2');
+                    $('.text').html('Almost there, Keep Going.');
+                } else if (count >= 41 && count <= 50) {
+                    $('.text').addClass('text3');
+                    $('.text').html('Good job. Keep it up.');
+                } else {
+                    $('text').html('');
+                }
+
+                count++;
+            }, 1000);
+
+        });
+
+        $('#pause').click(function () {
+            clearInterval(stop_watch_start);
+        });
+    </script>
+</body>
+
+</html>

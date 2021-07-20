@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Reverse countdown</title>
+</head>
+
+<body>
+    <div class="instructions">
+        <h1>Press start to trigger the bomb</h1>
+        <button class="btn">Start</button>
+        <h2></h2>
+    </div>
+    <div class="location">
+        <img src="assets/img/before-blast.jpg" alt="">
+    </div>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        let timer = 10;
+        let bom_start;
+        $('.btn').click(function () {
+
+            bom_start = setInterval(function () {
+                timer--;
+                $('h2').text(timer);
+
+                if (timer <= 0) {
+                    $('.location img').attr('src', 'assets/img/after blast.jpg');
+                    clearInterval(bom_start);
+                }
+
+            }, 1000);
+
+        });
+
+        let obj = document.createElement('audio');
+        obj.src = 'assets/img/beep-06.mp3';
+        let beep_start;
+
+        $('.btn').click(function () {
+            beep_start = setInterval(function () {
+                obj.play();
+
+                if (timer == 1) {
+                    clearInterval(beep_start);
+                }
+            }, 1000);
+        });
+
+        let obj_two = document.createElement('audio');
+        obj_two.src = 'assets/img/explosion-sound.mp3';
+        let explosions_start;
+
+        $('.btn').click(function () {
+            explosions_start = setInterval(function () {
+                if (timer == 0) {
+                    obj_two.play();
+                    clearInterval(explosions_start);
+                }
+            }, 1000);
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

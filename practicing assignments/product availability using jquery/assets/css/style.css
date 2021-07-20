@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.products{
+    width: 580px;
+    height: 490px;
+    margin: 60px auto 0px;
+    border: 1px solid red;
+}
+
+.products h1{
+    text-align: center;
+}
+
+.products span{
+    display: block;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+

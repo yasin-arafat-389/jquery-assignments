@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Product Availability</title>
+</head>
+
+<body>
+    <div class="products">
+        <h1>Click to see if the product is available</h1>
+        <span des='no'>Air Cooler</span>
+        <span des='yes'>Television</span>
+        <span des='yes'>Fridge</span>
+        <span des='no'>Mobile Phone</span>
+        <span des='yes'>Computer</span>
+        <span des='no'>Motorbike</span>
+        <span des='yes'>Fan</span>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $('span').click(function () {
+
+            let des = $(this).attr('des');
+
+            if (des == "no") {
+                $(this).html('Sorry!! This product is not available').css('background-color', 'red');
+            } else {
+                $(this).html('This product is available').css('background-color', 'green');
+            }
+        })
+
+    </script>
+</body>
+
+</html>

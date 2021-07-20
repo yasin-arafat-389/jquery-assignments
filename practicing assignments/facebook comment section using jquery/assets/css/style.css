@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-body{
+    width: 500px;
+    height: 515px;
+    margin: 16px auto 0px;
+    border: 1px solid red;
+}
+
+.comment-tools{
+  text-align: center;
+  margin-top: 8px;
+}
+
+.comment-tools input{
+    width: 300px;
+    height: 40px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 100px;
+    padding: 0px 10px;
+}
+
+.comment-tools button{
+    width: 70px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+}
+
+.comment-area{
+    width: 95%;
+    height: 75px;
+    border: 1px solid peachpuff;
+    margin: 0px auto;
+    padding: 7px;
+}
+
+.instruction{
+    width: 37%;
+    text-align: center;
+    margin: 0px auto;
+}

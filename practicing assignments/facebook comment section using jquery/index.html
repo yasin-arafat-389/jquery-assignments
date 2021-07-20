@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/font awesome/css/all.css">
+    <link rel="shortcut icon" href="assets/img/apple-touch-icon-57x57--default.png" type="image/x-icon">
+    <title>Comment section</title>
+</head>
+
+<body>
+    <div class="instruction">
+        <h1>write a comment in the comment box and click "Comment" button to send the comment</h1>
+    </div>
+    <div class="content-body">
+        <img src="assets/img/content image.png" alt="">
+        <div class="comment-area"></div>
+        <div class="comment-tools">
+            <input type="text" placeholder="Write a comment...">
+            <button>Comment</button>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $('button').click(function () {
+            let comment = $('input').val();
+            $('.comment-area').html(comment);
+            $('input').val(' ');
+        })
+    </script>
+</body>
+
+</html>
